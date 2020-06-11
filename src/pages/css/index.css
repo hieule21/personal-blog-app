@@ -1,8 +1,15 @@
 .ant-col {
   margin-top: 18px;
   padding: 18px;
-  box-shadow: inset;
 }
 
-.ant-row .card-shadow {
+.ant-row .card-about {
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+}
+
+.ant-row .card-blog {
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  height: 200vh;
 }
