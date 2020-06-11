@@ -1,0 +1,74 @@
+/*About*/
+.ant-col .title {
+  font-weight: 700;
+  line-height: 30px;
+  margin-bottom: 16px;
+  color: #096dd9;
+}
+
+.ant-col .about-text {
+  font-weight: 500;
+  line-height: 28px;
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+
+.ant-col p {
+  margin-bottom: 0;
+}
+
+.ant-col .footer {
+  font-weight: 300;
+}
+
+/*Icon Group*/
+.icon-btn-group .ant-btn {
+  height: 45px;
+  width: 45px;
+  border-color: #e2e8f0;
+}
+
+.icon-btn-group .ant-btn:hover {
+  box-shadow: 0px 8px 15px rgb(152, 205, 255);
+}
+
+.icon-btn-group .icon {
+  font-size: 32px;
+  padding-top: 5px;
+}
+
+.icon-btn-group .ant-col {
+  margin: 0;
+  padding: 0;
+}
+.icon-btn-group .ant-col:first-child {
+  padding-bottom: 16px;
+}
+
+/*Button*/
+.btn-group {
+  margin: 32px 0 32px;
+}
+
+.btn-group .action-btn {
+  border-radius: 7px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group .action-btn:first-child:hover {
+  color: #1890ff;
+  background: #fff;
+  box-shadow: 0px 8px 15px rgb(152, 205, 255);
+}
+
+.btn-group .action-btn:last-child {
+  margin-left: 20px;
+  color: #1890ff;
+  border-color: #1890ff;
+}
+
+.btn-group .action-btn:last-child:hover {
+  background-color: #1890ff;
+  color: #fff;
+  box-shadow: 0px 8px 15px #a6a6a6;
+}
