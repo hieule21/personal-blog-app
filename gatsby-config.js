@@ -6,6 +6,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blogs`,
+        path: `${__dirname}/content/blogs`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -37,3 +45,5 @@ module.exports = {
     },
   ],
 }
+
+console.log(`${__dirname}/src/images`)

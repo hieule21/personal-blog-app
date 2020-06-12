@@ -1,0 +1,35 @@
+.ant-card .card-body {
+  padding: 0;
+}
+
+.card-body hr {
+  border: 1px dotted #e0e0e0;
+  margin-bottom: -25px;
+  margin-top: 20px;
+}
+
+.blog-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-title .blog-tag {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  width: 5vw;
+  height: 4vh;
+  text-align: center;
+}
+
+.blog-title .blog-tag:hover {
+  color: #fff;
+  background-color: #096dd9;
+  border-radius: 7px;
+}
+
+.blog-title .title {
+  font-size: 32px;
+  line-height: 24px;
+  font-weight: 500;
+}
