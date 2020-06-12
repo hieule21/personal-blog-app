@@ -2,10 +2,22 @@
   padding: 0;
 }
 
+.card-body .ant-card-body {
+  padding: 24px 0 24px;
+}
+
 .card-body hr {
   border: 1px dotted #e0e0e0;
   margin-bottom: -25px;
   margin-top: 20px;
+}
+
+.card-body p {
+  font-size: 16px;
+}
+
+.card-body .blog-more {
+  margin-top: 8px;
 }
 
 .blog-title {
@@ -18,7 +30,7 @@
   font-weight: 700;
   line-height: 21px;
   width: 5vw;
-  height: 4vh;
+  height: 25px;
   text-align: center;
 }
 
@@ -29,7 +41,8 @@
 }
 
 .blog-title .title {
-  font-size: 32px;
+  font-size: 24px;
   line-height: 24px;
   font-weight: 500;
+  margin-bottom: 8px;
 }
