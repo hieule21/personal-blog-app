@@ -1,5 +1,5 @@
-const { createFilePath } = require("gatsby-source-filesystem")
-const path = require("path")
+const { createFilePath } = require('gatsby-source-filesystem')
+const path = require('path')
 
 //Create page
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -13,6 +13,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+            }
+            frontmatter {
+              title
             }
           }
         }
@@ -32,6 +35,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: post.node.fields.slug,
       component: path.resolve(`./src/templates/blog-template.js`),
       context: { id: post.node.id, previous, next },
+      previous,
+      next,
     })
   })
 }
@@ -39,11 +44,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 //Create slug field
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-  if (node.internal.type === "Mdx") {
+  if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })
 
     createNodeField({
-      name: "slug",
+      name: 'slug',
       node,
       value: `/blog${value}`,
     })
