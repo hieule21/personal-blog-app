@@ -1,14 +1,40 @@
 .container {
-  margin: auto;
+  margin: 1rem auto;
   padding: 16px;
   width: 65vw;
 }
 
-h1 {
+.container h1 {
   text-align: center;
+  font-size: 48px;
+  line-height: 59px;
+  font-weight: 600;
 }
 
-.nav-bar ul {
+.container p {
+  font-size: 18px;
+  line-height: 29px;
+  color: #222222;
+}
+
+.container .ant-tag {
+  cursor: pointer;
+}
+
+.nav-top {
+  position: fixed;
+  margin: 50vh 8vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-top-icon {
+  font-size: 23px;
+  color: black;
+  margin: 1rem auto;
+}
+
+.nav-bottom ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
