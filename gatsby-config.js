@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Hieu Le`,
+    title: ``,
     description: `Hieu Le - A web developer - Blogs`,
     author: `Hieu Le`,
   },
@@ -26,24 +26,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `icon`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/icon.png`,
       },
     },
     `gatsby-plugin-antd`,
     `gatsby-plugin-mdx`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [{ resolve: `gatsby-remark-prismjs` }],
-      },
-    },
+    `gatsby-remark-reading-time`,
   ],
 }
-
-console.log(`${__dirname}/src/images`)

@@ -14,6 +14,8 @@
 
 .card-body p {
   font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
 }
 
 .card-body .blog-more {
@@ -32,6 +34,7 @@
   width: 5vw;
   height: 25px;
   text-align: center;
+  padding: auto;
 }
 
 .blog-title .blog-tag:hover {
@@ -41,8 +44,12 @@
 }
 
 .blog-title .title {
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 27px;
+  line-height: 39px;
   font-weight: 500;
   margin-bottom: 8px;
+}
+
+.blog-more .link {
+  font-size: 16px;
 }

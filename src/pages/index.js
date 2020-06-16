@@ -3,7 +3,7 @@ import "./css/index.css"
 import { About, Blog } from "../components"
 
 import { Row, Col, Card } from "antd"
-import SEO from "../components/seo"
+import { SEO } from "../components"
 
 const IndexPage = () => {
   return (

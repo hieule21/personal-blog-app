@@ -25,11 +25,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMdx.edges
-  posts.forEach(({ node }, index) => {
+  posts.forEach((post, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
     createPage({
-      path: node.fields.slug,
+      path: post.node.fields.slug,
       component: path.resolve(`./src/templates/blog-template.js`),
-      context: { id: node.id },
+      context: { id: post.node.id, previous, next },
     })
   })
 }
