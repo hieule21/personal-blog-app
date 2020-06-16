@@ -1,13 +1,18 @@
 import React from 'react'
 import './blog-template.css'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { SEO } from '../components'
+import { Tag, Divider, Typography } from 'antd'
+import useAvatar from '../hooks/use-avatar'
 
-export default function PageTemplate({ data: { mdx }, pageContext }) {
+export default function PageTemplate({ data: { mdx, site }, pageContext }) {
+  const { Paragraph } = Typography
   const { previous, next } = pageContext
-  console.log(previous)
+  const image = useAvatar()
+  //Render
   return (
     <div className="container">
       <SEO title={mdx.frontmatter.title} />
@@ -15,16 +20,8 @@ export default function PageTemplate({ data: { mdx }, pageContext }) {
       <MDXProvider>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </MDXProvider>
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+      <nav className="nav-bar">
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -40,6 +37,32 @@ export default function PageTemplate({ data: { mdx }, pageContext }) {
             )}
           </li>
         </ul>
+        <div>
+          <Tag>ReactJS</Tag>
+          <Tag>GatsbyJS</Tag>
+        </div>
+        <Divider></Divider>
+        <footer>
+          <Img
+            fixed={image.childImageSharp.fixed}
+            style={{
+              marginBottom: '16px',
+              borderRadius: '50%',
+              height: '100px',
+              width: '100px',
+            }}
+            alt="Avatar"
+          ></Img>
+          <div className="footer-text">
+            <h2>Written by {site.siteMetadata.author}</h2>
+            <Paragraph>
+              I am an aspiring developer and interested in full-stack web
+              development. I enjoy writing blogs as a note for myself and
+              sharing my knowledge. I like playing League Of Legends and
+              skateboarding.
+            </Paragraph>
+          </div>
+        </footer>
       </nav>
     </div>
   )
@@ -52,6 +75,11 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+      }
+    }
+    site {
+      siteMetadata {
+        author
       }
     }
   }

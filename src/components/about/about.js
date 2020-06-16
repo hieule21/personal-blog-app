@@ -1,43 +1,29 @@
-import React from "react"
-import "./About.css"
-import Img from "gatsby-image"
-
-import { useStaticQuery, graphql } from "gatsby"
-import { FaFacebookSquare, FaLinkedinIn, FaGithub } from "react-icons/fa"
-import { AiFillCodeSandboxCircle, AiFillMediumCircle } from "react-icons/ai"
-import { MdEmail } from "react-icons/md"
-import { DownloadOutlined } from "@ant-design/icons"
-import { Typography, Row, Col, Button, Tooltip, Divider } from "antd"
+import React from 'react'
+import './About.css'
+import Img from 'gatsby-image'
+import useAvatar from '../../hooks/use-avatar'
+import { FaFacebookSquare, FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { AiFillCodeSandboxCircle, AiFillMediumCircle } from 'react-icons/ai'
+import { MdEmail } from 'react-icons/md'
+import { DownloadOutlined } from '@ant-design/icons'
+import { Typography, Row, Col, Button, Tooltip, Divider } from 'antd'
 
 const { Title, Paragraph } = Typography
 const About = () => {
-  const data = useStaticQuery(
-    graphql`
-      query Avatar {
-        image: file(relativePath: { eq: "avatar.jpg" }) {
-          childImageSharp {
-            fixed(width: 64, height: 64) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `
-  )
+  const image = useAvatar(64, 64)
   //Render
   return (
     <React.Fragment>
       <Img
-        fixed={data.image.childImageSharp.fixed}
-        style={{ marginBottom: "16px", borderRadius: "50%" }}
+        fixed={image.childImageSharp.fixed}
+        style={{
+          marginBottom: '16px',
+          borderRadius: '50%',
+          height: '80px',
+          width: '80px',
+        }}
         alt="Avatar"
       ></Img>
-      {/* <Avatar
-        size={64}
-        src={avatar}
-        style={{ marginBottom: "16px" }}
-        alt="Avatar"
-      ></Avatar> */}
       <Title level={4} className="title" type="primary">
         Hieu Le
       </Title>
@@ -108,15 +94,15 @@ const About = () => {
       <div className="footer">
         <p>@ {new Date().getFullYear()} Hieu Le. All rights reserved.</p>
         <p>
-          Built with{" "}
+          Built with{' '}
           <a
             href="https://ant.design/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ant Design{" "}
+            Ant Design{' '}
           </a>
-          and{" "}
+          and{' '}
           <a
             href="https://www.gatsbyjs.org/"
             target="_blank"

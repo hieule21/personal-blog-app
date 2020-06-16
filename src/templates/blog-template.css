@@ -7,3 +7,19 @@
 h1 {
   text-align: center;
 }
+
+.nav-bar ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+footer {
+  display: flex;
+}
+footer .footer-text {
+  max-width: 87%;
+  margin-left: 3%;
+}
