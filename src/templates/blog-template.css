@@ -1,6 +1,6 @@
 .container {
-  margin: 1rem auto;
-  padding: 16px;
+  margin: auto;
+  padding-top: 2rem;
   width: 65vw;
 }
 
@@ -21,17 +21,9 @@
   cursor: pointer;
 }
 
-.nav-top {
+.template .ant-btn {
   position: fixed;
-  margin: 50vh 8vw;
-  display: flex;
-  flex-direction: column;
-}
-
-.nav-top-icon {
-  font-size: 23px;
-  color: black;
-  margin: 1rem auto;
+  margin: 3rem 2rem;
 }
 
 .nav-bottom ul {
