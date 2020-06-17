@@ -23,7 +23,7 @@
 
 .template .ant-btn {
   position: fixed;
-  margin: 3rem 2rem;
+  margin: 2rem 2rem;
 }
 
 .nav-bottom ul {
@@ -40,4 +40,8 @@ footer {
 footer .footer-text {
   max-width: 87%;
   margin-left: 3%;
+}
+
+.prism-code {
+  padding: 1rem;
 }

@@ -1,17 +1,18 @@
-import React from 'react'
-import './blog-template.css'
-import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { SEO } from '../components'
-import { Tag, Divider, Typography, Button } from 'antd'
-import useAvatar from '../hooks/use-avatar'
+import React from "react"
+import "./blog-template.css"
+import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { SEO } from "../components"
+import { Tag, Divider, Typography, Button } from "antd"
+import useAvatar from "../hooks/use-avatar"
 
 export default function PageTemplate({ data: { mdx, site }, pageContext }) {
   const { Paragraph } = Typography
   const { previous, next } = pageContext
   const image = useAvatar()
+
   //Render
   return (
     <div className="template">
@@ -57,10 +58,10 @@ export default function PageTemplate({ data: { mdx, site }, pageContext }) {
             <Img
               fixed={image.childImageSharp.fixed}
               style={{
-                marginBottom: '16px',
-                borderRadius: '50%',
-                height: '100px',
-                width: '100px',
+                marginBottom: "16px",
+                borderRadius: "50%",
+                height: "100px",
+                width: "100px",
               }}
               alt="Avatar"
             ></Img>
