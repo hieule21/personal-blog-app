@@ -1,20 +1,28 @@
+h1 {
+  text-align: center;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 31px;
+  font-weight: 600;
+}
+
+p,
+li,
+ul {
+  font-size: 18px;
+  line-height: 29px;
+  color: #222222;
+}
+
 .container {
   margin: auto;
   padding-top: 2rem;
   width: 65vw;
-}
-
-.container h1 {
-  text-align: center;
-  font-size: 48px;
-  line-height: 59px;
-  font-weight: 600;
-}
-
-.container p {
-  font-size: 18px;
-  line-height: 29px;
-  color: #222222;
 }
 
 .container .ant-tag {
