@@ -86,7 +86,7 @@ using mostly **_gatsby-config.js_** and **_gatsby-node.js_**.
    + Create a few more same-structure files, then we'll later render them out programmatically.
 
 
-2. #### Let Gatsby be aware of those files we just created:
+2. #### Apply neccessary plugins:
    + It's time to get our hands dirty with ***gatsby-plugin.js***. This is where we add plugins that extends Gatsby's abilities to
    get its job done.
    + As you may notice, there are a few plugins pre-added to our project, but let's just ignore them for now. 
@@ -103,5 +103,25 @@ using mostly **_gatsby-config.js_** and **_gatsby-node.js_**.
    ```
    + The plugin __gatsby-source-filesystem__ is already installed by Gatsby CLI and helps Gatsby know where to find 
    the folder __blogs__.
+   + To query all the **Markdown** files in GraphQL (more on this in the next section), we also need plugin __gatsby-transformer-remark__:  
+   ```shell
+   npm install gatsby-transformer-remark
+   ```
+   + Include the plugin we just installed in ***gatsby-plugin.js*** under the __plugin__ array as one of its elements: 
+   ```js
+   `gatsby-transformer-remark`
+   ```
+   ****Note***: Remember to restart development server (`gatsby develop`) after changing ***gatsby-plugin.js*** file.
 
 3. #### Query static data by GraphQL in React components:
+   + Open the browser and navigate to [http://localhost:8000/___graphql](http://localhost:8000/___graphql), you'll see GraphiQL, which
+   is the GraphQL integrated development that helps us work with GraphQL easily.
+   + There are three subwindows: 
+      + Left subwindow - Explorer: This GUI allows us to query data by clicking on the fields we need.
+      + Middle subwindow: Displaying what we chose on Explorer window in code format which is used to query data in React
+      components.
+      + Right subwindow: Queried data is shown here in Javascript object format.
+   + In Explorer tab, two fields **allFile** and **file**, added by plugin __gatsby-source-filesystem__, allows us to get all
+   the files which we added their directory to ***gatsby-plugin.js*** (included the blogs folder).
+   + To query Markdown files, we should use plugin __gatsby-transformer-remark__, which adds two new fields ***allMarkdownRemark*** and ***markdownRemark***
+   to Explorer tab.
